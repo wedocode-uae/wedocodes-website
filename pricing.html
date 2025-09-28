@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - WeDoCodes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ea580c;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Pricing Intro Section */
+        .pricing-intro {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 150px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .pricing-intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-intro h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .pricing-intro p {
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .intro-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background-color: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .pricing-header {
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .pricing-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .pricing-period {
+            color: var(--gray);
+            font-size: 16px;
+        }
+        
+        .pricing-features {
+            padding: 30px;
+        }
+        
+        .pricing-features ul {
+            list-style: none;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features i {
+            color: #10b981;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .pricing-features .fa-times {
+            color: #ef4444;
+        }
+        
+        .pricing-cta {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+        
+        /* Custom Solution Section */
+        .custom-solution {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .custom-solution h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .custom-solution p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: #f8fafc;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .pricing-grid, .faq-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .pricing-intro {
+                padding: 120px 0 60px;
+            }
+            
+            .pricing-intro h1 {
+                font-size: 32px;
+            }
+            
+            .pricing-grid, .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .intro-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .intro-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">WeDo<span>Codes</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designs.html">Our Designs</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="enquiry.html">Get Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Pricing Intro Section -->
+    <section class="pricing-intro">
+        <div class="container">
+            <div class="pricing-intro-content">
+                <h1>Transparent Pricing for Exceptional Web Solutions</h1>
+                <p>Explore our carefully crafted packages designed to meet diverse business needs. Whether you're launching a startup or scaling an enterprise, we have the perfect solution for your online presence.</p>
+                <p>Can't find what you're looking for? We specialize in custom solutions tailored to your specific requirements and budget.</p>
+                <div class="intro-actions">
+                    <a href="#pricing-packages" class="btn btn-secondary">View Our Packages</a>
+                    <a href="enquiry.html" class="btn btn-outline">Request Custom Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <main id="pricing-page">
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing-packages">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Website Design Packages</h2>
+                    <p>All packages include responsive design, basic SEO optimization, and 1-year premium hosting</p>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Starter Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <div class="pricing-name">Starter</div>
+                            <div class="pricing-price">AED 2,499</div>
+                            <div class="pricing-period">One-time payment</div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 5 Custom Designed Pages</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Contact Form Integration</li>
+                                <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                                <li><i class="fas fa-check"></i> Social Media Integration</li>
+                                <li><i class="fas fa-check"></i> 1 Year Premium Hosting</li>
+                                <li><i class="fas fa-check"></i> 1 Year Domain Registration</li>
+                                <li><i class="fas fa-check"></i> 1 Month Technical Support</li>
+                                <li><i class="fas fa-times"></i> <span style="opacity: 0.7;">E-commerce Functionality</span></li>
+                                <li><i class="fas fa-times"></i> <span style="opacity: 0.7;">CMS Integration</span></li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="enquiry.html?package=starter" class="btn">Choose Starter</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Package -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <div class="pricing-name">Business</div>
+                            <div class="pricing-price">AED 4,999</div>
+                            <div class="pricing-period">One-time payment</div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 10 Custom Designed Pages</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Contact Form & Newsletter</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO Optimization</li>
+                                <li><i class="fas fa-check"></i> Social Media Integration</li>
+                                <li><i class="fas fa-check"></i> CMS Integration (WordPress)</li>
+                                <li><i class="fas fa-check"></i> 1 Year Premium Hosting</li>
+                                <li><i class="fas fa-check"></i> 1 Year Domain Registration</li>
+                                <li><i class="fas fa-check"></i> 3 Months Technical Support</li>
+                                <li><i class="fas fa-times"></i> <span style="opacity: 0.7;">E-commerce Functionality</span></li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="enquiry.html?package=business" class="btn btn-secondary">Choose Business</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <div class="pricing-name">Premium</div>
+                            <div class="pricing-price">AED 8,999</div>
+                            <div class="pricing-period">One-time payment</div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 15+ Custom Designed Pages</li>
+                                <li><i class="fas fa-check"></i> Mobile Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Contact Form & Newsletter</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO Optimization</li>
+                                <li><i class="fas fa-check"></i> Social Media Integration</li>
+                                <li><i class="fas fa-check"></i> CMS Integration (WordPress)</li>
+                                <li><i class="fas fa-check"></i> E-commerce Functionality</li>
+                                <li><i class="fas fa-check"></i> Payment Gateway Integration</li>
+                                <li><i class="fas fa-check"></i> 1 Year Premium Hosting</li>
+                                <li><i class="fas fa-check"></i> 1 Year Domain Registration</li>
+                                <li><i class="fas fa-check"></i> 6 Months Technical Support</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="enquiry.html?package=premium" class="btn">Choose Premium</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Custom Solution Section -->
+        <section class="custom-solution">
+            <div class="container">
+                <h2>Need a Custom Solution?</h2>
+                <p>Every business is unique. If our standard packages don't perfectly match your requirements, we'll create a tailored solution that fits your specific needs and budget.</p>
+                <a href="enquiry.html" class="btn btn-secondary">Request Custom Quote</a>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about our web design services</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">How long does it take to build a website?</div>
+                        <div class="faq-answer">Our typical timeline is 2-4 weeks for Starter packages, 3-5 weeks for Business packages, and 4-6 weeks for Premium packages, depending on project complexity and client feedback.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide website hosting?</div>
+                        <div class="faq-answer">Yes, all our packages include 1 year of premium hosting with 99.9% uptime guarantee, SSL certificate, and daily backups. Renewal is AED 600/year after the first year.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I update the website myself?</div>
+                        <div class="faq-answer">Absolutely! Our Business and Premium packages include CMS integration (WordPress) so you can easily update content without technical knowledge. We also provide training.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer custom packages?</div>
+                        <div class="faq-answer">Yes, we understand that every business is unique. Contact us for a custom quote tailored to your specific requirements, timeline, and budget constraints.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What payment methods do you accept?</div>
+                        <div class="faq-answer">We accept bank transfers, credit cards, and installment plans for larger projects. A 50% deposit is required to start any project, with the balance due upon completion.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide ongoing maintenance?</div>
+                        <div class="faq-answer">Yes, we offer monthly maintenance plans starting from AED 300/month for updates, security monitoring, performance optimization, and technical support.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WeDoCodes</h3>
+                    <p>Professional web services provider in UAE, specializing in website design, domain registration, hosting, and business email solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="designs.html">Our Designs</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="enquiry.html">Get Quote</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Website Design</a></li>
+                        <li><a href="#">Domain Purchase</a></li>
+                        <li><a href="#">Web Hosting</a></li>
+                        <li><a href="#">Business Email</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Website Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +971 50 123 5798</li>
+                        <li><i class="fas fa-envelope"></i> support@wedocodes.com</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 50 123 5798</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Office 207, Abu Saif Building, Dubai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WeDoCodes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

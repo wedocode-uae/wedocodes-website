@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Designs - WeDoCodes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --light-gray: #f1f5f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ea580c;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Professional Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--dark);
+            text-align: center;
+            padding: 150px 0 80px;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 60%, rgba(249, 115, 22, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 20%);
+            z-index: 1;
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+            max-width: 800px;
+        }
+        
+        /* Design Process Description */
+        .design-process {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .design-process h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .design-process p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+        
+        .design-process ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            list-style: none;
+        }
+        
+        .design-process li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--dark);
+        }
+        
+        .design-process li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Designs Section */
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .design-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            background-color: white;
+            position: relative;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .design-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+        
+        .design-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .design-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .design-card .design-info {
+            padding: 25px;
+        }
+        
+        .design-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: var(--dark);
+        }
+        
+        .design-card p {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .design-category {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--light-gray);
+            color: var(--primary);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .designs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .designs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header {
+                padding: 120px 0 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 32px;
+            }
+            
+            .design-process {
+                padding: 25px;
+            }
+            
+            .design-process h2 {
+                font-size: 24px;
+            }
+            
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">WeDo<span>Codes</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designs.html">Our Designs</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="enquiry.html">Get Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Professional Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Our Website Designs</h1>
+                <p>Browse through our portfolio of stunning website designs created for businesses in the UAE. Each design is crafted with precision, creativity, and a focus on delivering exceptional user experiences.</p>
+                
+                <div class="design-process">
+                    <h2>Our Design Process</h2>
+                    <p>We follow a meticulous design process that ensures every website we create not only looks stunning but also performs exceptionally well:</p>
+                    
+                    <ul>
+                        <li><strong>Discovery & Strategy:</strong> We begin by understanding your business, target audience, and goals to create a strategic design plan.</li>
+                        <li><strong>Wireframing & Prototyping:</strong> We create detailed wireframes and interactive prototypes to visualize the user journey.</li>
+                        <li><strong>Visual Design:</strong> Our designers craft beautiful, modern interfaces that reflect your brand identity.</li>
+                        <li><strong>Development & Testing:</strong> We transform designs into fully functional websites with rigorous testing across devices.</li>
+                        <li><strong>Launch & Optimization:</strong> We deploy your website and continuously optimize for performance and conversions.</li>
+                    </ul>
+                    
+                    <p>Our designs are not just visually appealing - they're strategically crafted to drive results for your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <main id="designs-page">
+        <section class="designs">
+            <div class="container">
+                <div class="designs-grid">
+                    <!-- Row 1 -->
+                    <div class="design-card">
+                        <img src="images/corporate-design.jpg" alt="Corporate Website Design">
+                        <div class="design-info">
+                            <h3>Corporate Business</h3>
+                            <p>Professional design for corporate companies with modern aesthetics</p>
+                            <span class="design-category">Corporate</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/ecommerce-design.jpg" alt="E-commerce Website Design">
+                        <div class="design-info">
+                            <h3>E-commerce Store</h3>
+                            <p>Online shopping platform with secure payment and product catalog</p>
+                            <span class="design-category">E-commerce</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/restaurant-design.jpg" alt="Restaurant Website Design">
+                        <div class="design-info">
+                            <h3>Restaurant & Cafe</h3>
+                            <p>Menu display with online ordering and reservation system</p>
+                            <span class="design-category">Food & Beverage</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="design-card">
+                        <img src="images/realestate-design.jpg" alt="Real Estate Website Design">
+                        <div class="design-info">
+                            <h3>Real Estate</h3>
+                            <p>Property listings with search filters and virtual tours</p>
+                            <span class="design-category">Real Estate</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/medical-design.jpg" alt="Medical Website Design">
+                        <div class="design-info">
+                            <h3>Medical & Healthcare</h3>
+                            <p>Healthcare services with appointment booking and doctor profiles</p>
+                            <span class="design-category">Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/education-design.jpg" alt="Education Website Design">
+                        <div class="design-info">
+                            <h3>Education & Learning</h3>
+                            <p>Online courses platform with student dashboard</p>
+                            <span class="design-category">Education</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 3 -->
+                    <div class="design-card">
+                        <img src="images/travel-design.jpg" alt="Travel Website Design">
+                        <div class="design-info">
+                            <h3>Travel & Tourism</h3>
+                            <p>Tour packages with booking system and destination guides</p>
+                            <span class="design-category">Travel</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/fitness-design.jpg" alt="Fitness Website Design">
+                        <div class="design-info">
+                            <h3>Fitness & Wellness</h3>
+                            <p>Gym and fitness center with class schedules and membership options</p>
+                            <span class="design-category">Fitness</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/construction-design.jpg" alt="Construction Website Design">
+                        <div class="design-info">
+                            <h3>Construction</h3>
+                            <p>Construction company with project portfolio and service details</p>
+                            <span class="design-category">Construction</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 4 -->
+                    <div class="design-card">
+                        <img src="images/legal-design.jpg" alt="Law Firm Website Design">
+                        <div class="design-info">
+                            <h3>Law Firm</h3>
+                            <p>Legal services with attorney profiles and consultation booking</p>
+                            <span class="design-category">Legal</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/hotel-design.jpg" alt="Hotel Website Design">
+                        <div class="design-info">
+                            <h3>Hotel & Resort</h3>
+                            <p>Luxury accommodation with room booking and amenities</p>
+                            <span class="design-category">Hospitality</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/automotive-design.jpg" alt="Automotive Website Design">
+                        <div class="design-info">
+                            <h3>Automotive</h3>
+                            <p>Car dealership with vehicle inventory and financing options</p>
+                            <span class="design-category">Automotive</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 5 -->
+                    <div class="design-card">
+                        <img src="images/fashion-design.jpg" alt="Fashion Website Design">
+                        <div class="design-info">
+                            <h3>Fashion & Beauty</h3>
+                            <p>Fashion brand with lookbook and online store</p>
+                            <span class="design-category">Fashion</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/nonprofit-design.jpg" alt="Non-Profit Website Design">
+                        <div class="design-info">
+                            <h3>Non-Profit Organization</h3>
+                            <p>Charity website with donation system and event calendar</p>
+                            <span class="design-category">Non-Profit</span>
+                        </div>
+                    </div>
+                    <div class="design-card">
+                        <img src="images/technology-design.jpg" alt="Technology Website Design">
+                        <div class="design-info">
+                            <h3>Technology Company</h3>
+                            <p>IT services with portfolio and client testimonials</p>
+                            <span class="design-category">Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Online Presence?</h2>
+                <p>Let's discuss your project and create a stunning website that drives results for your business.</p>
+                <a href="enquiry.html" class="btn btn-secondary">Get a Free Quote</a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WeDoCodes</h3>
+                    <p>Professional web services provider in UAE, specializing in website design, domain registration, hosting, and business email solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="designs.html">Our Designs</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="enquiry.html">Get Quote</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Website Design</a></li>
+                        <li><a href="#">Domain Purchase</a></li>
+                        <li><a href="#">Web Hosting</a></li>
+                        <li><a href="#">Business Email</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Website Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +971 50 123 5798</li>
+                        <li><i class="fas fa-envelope"></i> support@wedocodes.com</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 50 123 5798</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Office 207, Abu Saif Building, Dubai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WeDoCodes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

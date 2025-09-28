@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeDoCodes - Professional Web Services in UAE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ea580c;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Glass Effect Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header.scrolled .logo {
+            color: var(--primary);
+        }
+        
+        header.scrolled .nav-links a {
+            color: var(--dark);
+        }
+        
+        header.scrolled .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 180px 0 100px;
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Floating Round Elements with Text */
+        .floating-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+        
+        /* Different sizes and colors with text */
+        .circle-1 {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 5%;
+            background: #4f46e5;
+            animation-delay: 0s;
+            font-size: 10px;
+        }
+        
+        .circle-2 {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 10%;
+            background: #0ea5e9;
+            animation-delay: 2s;
+            font-size: 14px;
+        }
+        
+        .circle-3 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 8%;
+            background: #10b981;
+            animation-delay: 4s;
+            font-size: 9px;
+        }
+        
+        .circle-4 {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            right: 15%;
+            background: #f59e0b;
+            animation-delay: 6s;
+            font-size: 12px;
+        }
+        
+        .circle-5 {
+            width: 70px;
+            height: 70px;
+            top: 70%;
+            left: 20%;
+            background: #ef4444;
+            animation-delay: 8s;
+            font-size: 10px;
+        }
+        
+        .circle-6 {
+            width: 90px;
+            height: 90px;
+            top: 15%;
+            left: 70%;
+            background: #8b5cf6;
+            animation-delay: 10s;
+            font-size: 11px;
+        }
+        
+        .circle-7 {
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 80%;
+            background: #06b6d4;
+            animation-delay: 12s;
+            font-size: 8px;
+        }
+        
+        .circle-8 {
+            width: 110px;
+            height: 110px;
+            top: 30%;
+            left: 15%;
+            background: #84cc16;
+            animation-delay: 14s;
+            font-size: 13px;
+        }
+        
+        .circle-9 {
+            width: 65px;
+            height: 65px;
+            top: 75%;
+            left: 60%;
+            background: #f97316;
+            animation-delay: 16s;
+            font-size: 9px;
+        }
+        
+        .circle-10 {
+            width: 85px;
+            height: 85px;
+            top: 5%;
+            left: 40%;
+            background: #3b82f6;
+            animation-delay: 18s;
+            font-size: 11px;
+        }
+        
+        .circle-11 {
+            width: 95px;
+            height: 95px;
+            top: 65%;
+            left: 85%;
+            background: #ec4899;
+            animation-delay: 20s;
+            font-size: 12px;
+        }
+        
+        .circle-12 {
+            width: 55px;
+            height: 55px;
+            top: 25%;
+            left: 45%;
+            background: #6366f1;
+            animation-delay: 22s;
+            font-size: 8px;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, -15px) rotate(5deg);
+            }
+            50% {
+                transform: translate(-15px, 10px) rotate(-5deg);
+            }
+            75% {
+                transform: translate(10px, 15px) rotate(3deg);
+            }
+        }
+        
+        /* Service Preview Cards */
+        .service-preview {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 20px;
+        }
+        
+        .preview-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .preview-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+        
+        .preview-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .preview-item h4 {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose {
+            background-color: #f1f5f9;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Process Section */
+        .process {
+            background-color: white;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            counter-reset: process-counter;
+        }
+        
+        .process-step {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            counter-increment: process-counter;
+        }
+        
+        .process-step::before {
+            content: counter(process-counter);
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin: 20px 0 15px;
+        }
+        
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .process-step p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .services-grid, .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .service-preview {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .nav-links a {
+                color: var(--dark);
+                font-size: 18px;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .services-grid, .features-grid, .process-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-preview {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .preview-item {
+                width: 80%;
+                max-width: 250px;
+            }
+            
+            /* Reduce number of floating circles on mobile */
+            .circle-5, .circle-6, .circle-7, .circle-8, .circle-9, .circle-10, .circle-11, .circle-12 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Glass Effect Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">WeDo<span>Codes</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designs.html">Our Designs</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="enquiry.html">Get Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page Content -->
+    <main id="home-page">
+        <!-- Hero Section with Floating Round Elements -->
+        <section class="hero">
+            <!-- Floating background elements with text -->
+            <div class="floating-bg-elements">
+                <div class="floating-circle circle-1">DESIGN</div>
+                <div class="floating-circle circle-2">HOSTING</div>
+                <div class="floating-circle circle-3">DOMAIN</div>
+                <div class="floating-circle circle-4">EMAILS</div>
+                <div class="floating-circle circle-5">SEO</div>
+                <div class="floating-circle circle-6">SUPPORT</div>
+                <div class="floating-circle circle-7">CMS</div>
+                <div class="floating-circle circle-8">E-COMMERCE</div>
+                <div class="floating-circle circle-9">SSL</div>
+                <div class="floating-circle circle-10">UAE</div>
+                <div class="floating-circle circle-11">MOBILE</div>
+                <div class="floating-circle circle-12">FAST</div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Professional Web Services in UAE</h1>
+                    <p>We create stunning websites, provide domain registration, hosting solutions, and professional business emails for your company.</p>
+                    <a href="https://wa.me/971501235798" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    
+                    <div class="service-preview">
+                        <div class="preview-item">
+                            <div class="preview-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Web Design</h4>
+                        </div>
+                        <div class="preview-item">
+                            <div class="preview-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4>Hosting</h4>
+                        </div>
+                        <div class="preview-item">
+                            <div class="preview-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Business Email</h4>
+                        </div>
+                        <div class="preview-item">
+                            <div class="preview-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>SEO</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>We offer comprehensive web solutions to help your business establish a strong online presence.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Website Design</h3>
+                        <p>Custom website designs that are visually appealing, responsive, and optimized for user experience.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Domain Purchase</h3>
+                        <p>Find and register the perfect domain name for your business with our expert guidance.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Web Hosting</h3>
+                        <p>Reliable and secure hosting solutions to keep your website running smoothly 24/7.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Business Email</h3>
+                        <p>Professional email addresses using your domain name to build trust with your customers.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>Improve your website visibility on search engines and attract more organic traffic.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Website Maintenance</h3>
+                        <p>Regular updates, security patches, and performance optimization for your website.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose WeDoCodes?</h2>
+                    <p>We provide exceptional value and expertise that sets us apart from other web service providers.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Fast & Efficient</h3>
+                        <p>We deliver projects on time without compromising quality, ensuring your business gets online quickly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure & Reliable</h3>
+                        <p>Our solutions include robust security measures and reliable hosting to protect your online presence.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Dedicated Support</h3>
+                        <p>We provide ongoing support and maintenance to ensure your website remains up-to-date and secure.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile-First Approach</h3>
+                        <p>All our websites are designed with a mobile-first approach to ensure optimal performance on all devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Results-Driven</h3>
+                        <p>Our designs are focused on achieving your business goals, whether it's leads, sales, or brand awareness.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Custom Solutions</h3>
+                        <p>We tailor our services to meet your specific business needs, ensuring a perfect fit for your requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section class="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Simple Process</h2>
+                    <p>We make getting your business online straightforward and stress-free.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Consultation</h3>
+                        <p>We discuss your requirements, goals, and vision for your online presence.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3>Design & Planning</h3>
+                        <p>We create a customized design plan that aligns with your brand and objectives.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Development</h3>
+                        <p>Our team builds your website with attention to detail and best practices.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Launch & Support</h3>
+                        <p>We launch your website and provide ongoing support to ensure its success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WeDoCodes</h3>
+                    <p>Professional web services provider in UAE, specializing in website design, domain registration, hosting, and business email solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="designs.html">Our Designs</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="enquiry.html">Get Quote</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Website Design</a></li>
+                        <li><a href="#">Domain Purchase</a></li>
+                        <li><a href="#">Web Hosting</a></li>
+                        <li><a href="#">Business Email</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Website Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +971 50 123 5798</li>
+                        <li><i class="fas fa-envelope"></i> support@wedocodes.com</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 50 123 5798</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Office 207, Abu Saif Building, Dubai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WeDoCodes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
