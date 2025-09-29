@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Quote - WeDoCodes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
@@ -22,6 +23,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Sans Pro', sans-serif;
         }
         
         body {
@@ -95,14 +100,15 @@
             margin: 0 auto;
         }
         
-        /* Header Styles */
+        /* Header Styles - Updated to match home page */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
         
         .navbar {
@@ -115,8 +121,10 @@
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--dark);
             text-decoration: none;
+            transition: color 0.3s ease;
+            font-family: 'Source Sans Pro', sans-serif;
         }
         
         .logo span {
@@ -135,18 +143,39 @@
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
+            position: relative;
+            font-family: 'Source Sans Pro', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
         
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--secondary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         .mobile-menu {
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--dark);
         }
         
         /* Form Section */
@@ -202,6 +231,7 @@
         .page-header h1 {
             font-size: 42px;
             margin-bottom: 20px;
+            font-family: 'Source Sans Pro', sans-serif;
         }
         
         .page-header p {
@@ -230,6 +260,7 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            font-family: 'Source Sans Pro', sans-serif;
         }
         
         .footer-column h3::after {
@@ -299,7 +330,7 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background-color: white;
+                background: white;
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -311,6 +342,11 @@
             
             .nav-links li {
                 margin: 10px 0;
+            }
+            
+            .nav-links a {
+                color: var(--dark);
+                font-size: 18px;
             }
             
             .mobile-menu {
@@ -333,23 +369,23 @@
 </head>
 <body>
     <!-- Header -->
-<header>
-    <div class="container">
-        <nav class="navbar">
-            <a href="index.html" class="logo">WeDo<span>Codes</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="designs.html">Our Designs</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="enquiry.html">Get Quote</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">WeDo<span>Codes</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designs.html">Our Designs</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="enquiry.html">Get Quote</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
     
     <!-- Page Header -->
     <section class="page-header">
@@ -407,7 +443,7 @@
     </main>
     
     <!-- Footer -->
-   <footer>
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -462,14 +498,12 @@
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
         });
-    </script>
-</body>
-</html>
 
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
         });
 
         // Form Submission
