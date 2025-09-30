@@ -118,7 +118,50 @@
             padding: 20px 0;
         }
         
+        /* Logo Styles - Updated with rotating effect */
         .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Continuous rotation animation */
+            animation: rotateLogo 10s linear infinite;
+        }
+        
+        @keyframes rotateLogo {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .code-symbol {
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .logo-text {
             font-size: 24px;
             font-weight: 700;
             color: var(--dark);
@@ -127,7 +170,7 @@
             font-family: 'Source Sans Pro', sans-serif;
         }
         
-        .logo span {
+        .logo-text span {
             color: var(--secondary);
         }
         
@@ -380,7 +423,14 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">WeDo<span>Codes</span></a>
+                <a href="index.html" class="logo">
+                    <div class="logo-container">
+                        <div class="logo-circle">
+                            <span class="code-symbol">&lt;/&gt;</span>
+                        </div>
+                        <span class="logo-text">WeDo<span>Codes</span></span>
+                    </div>
+                </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="designs.html">Our Designs</a></li>
