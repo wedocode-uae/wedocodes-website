@@ -555,8 +555,8 @@
             line-height: 1.7;
         }
         
-        /* Growth Promise Graph */
-        .growth-graph {
+        /* Growth Milestones Section (Replaced Graph) */
+        .growth-milestones {
             background-color: #f1f5f9;
             border-radius: 12px;
             padding: 40px;
@@ -564,81 +564,108 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
         
-        .graph-title {
+        .milestones-title {
             text-align: center;
             margin-bottom: 40px;
         }
         
-        .graph-title h3 {
+        .milestones-title h3 {
             font-size: 28px;
             color: var(--dark);
             margin-bottom: 10px;
         }
         
-        .graph-title p {
+        .milestones-title p {
             color: var(--gray);
             font-size: 18px;
         }
         
-        .graph-container {
+        .milestones-container {
             display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            height: 300px;
-            padding: 0 20px;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .milestone {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
             position: relative;
+            overflow: hidden;
         }
         
-        .graph-baseline {
+        .milestone:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone::before {
+            content: '';
             position: absolute;
-            bottom: 0;
             left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--gray);
-            opacity: 0.3;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
         }
         
-        .graph-bar {
-            width: 8%;
-            background: linear-gradient(to top, var(--primary), var(--secondary));
-            border-radius: 4px 4px 0 0;
-            position: relative;
-            transition: all 0.5s ease;
-            animation: growBar 1.5s ease-out forwards;
-            opacity: 0;
+        .milestone-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
-        @keyframes growBar {
-            0% {
-                height: 0;
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        .milestone-content {
+            flex: 1;
         }
         
-        .graph-label {
-            position: absolute;
-            bottom: -30px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-weight: 600;
-            font-size: 14px;
+        .milestone-content h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
             color: var(--dark);
+            font-family: 'Source Sans Pro', sans-serif;
         }
         
-        .graph-value {
-            position: absolute;
-            top: -25px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
+        .milestone-progress {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .progress-bar {
+            flex: 1;
+            height: 10px;
+            background-color: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+            width: 0;
+        }
+        
+        .progress-text {
+            font-weight: 600;
             color: var(--primary);
+            min-width: 100px;
+            text-align: right;
         }
         
         /* Services Section */
@@ -1074,28 +1101,21 @@
                 width: 100%;
             }
             
-            /* Fixed: Graph display on mobile devices */
-            .graph-container {
-                flex-wrap: wrap;
-                height: auto;
-                justify-content: center;
+            /* Mobile styles for milestones */
+            .milestone {
+                flex-direction: column;
+                text-align: center;
                 gap: 20px;
             }
             
-            .graph-bar {
-                width: 40%;
-                height: auto !important;
-                margin-bottom: 40px;
-                min-height: 60px;
+            .milestone-progress {
+                flex-direction: column;
+                gap: 10px;
             }
             
-            /* Set specific heights for each bar on mobile */
-            .graph-bar:nth-child(1) { height: 60px; }
-            .graph-bar:nth-child(2) { height: 90px; }
-            .graph-bar:nth-child(3) { height: 120px; }
-            .graph-bar:nth-child(4) { height: 160px; }
-            .graph-bar:nth-child(5) { height: 200px; }
-            .graph-bar:nth-child(6) { height: 240px; }
+            .progress-text {
+                text-align: center;
+            }
             
             .video-container {
                 max-width: 95%;
@@ -1292,7 +1312,7 @@
                     <!-- Strategy Video Section -->
                     <div class="strategy-video">
                         <div class="video-container">
-                            <video controls poster="video/strategy-preview.jpg">
+                            <video controls poster="video/9-step-digital-marketing-strategy-preview.jpg">
                                 <source src="video/9-step-digital-marketing-strategy.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -1340,37 +1360,102 @@
                     </div>
                 </div>
                 
-                <!-- Growth Promise Graph -->
-                <div class="growth-graph">
-                    <div class="graph-title">
-                        <h3>Our 9-Step Strategy Delivers Measurable Growth</h3>
-                        <p>See how our comprehensive approach drives business results month after month</p>
+                <!-- Growth Milestones (Replaced Graph) -->
+                <div class="growth-milestones">
+                    <div class="milestones-title">
+                        <h3>Our Growth Journey Together</h3>
+                        <p>Track your business growth month by month with our proven strategy</p>
                     </div>
-                    <div class="graph-container">
-                        <div class="graph-baseline"></div>
-                        <div class="graph-bar" style="animation-delay: 0.1s;">
-                            <div class="graph-value">+15%</div>
-                            <div class="graph-label">Month 1</div>
+                    
+                    <div class="milestones-container">
+                        <div class="milestone">
+                            <div class="milestone-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <h4>Month 1: Foundation</h4>
+                                <div class="milestone-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 15%"></div>
+                                    </div>
+                                    <span class="progress-text">+15% Growth</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="graph-bar" style="animation-delay: 0.2s;">
-                            <div class="graph-value">+25%</div>
-                            <div class="graph-label">Month 2</div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-icon">
+                                <i class="fas fa-sprout"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <h4>Month 2: Growth</h4>
+                                <div class="milestone-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 25%"></div>
+                                    </div>
+                                    <span class="progress-text">+25% Growth</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="graph-bar" style="animation-delay: 0.3s;">
-                            <div class="graph-value">+40%</div>
-                            <div class="graph-label">Month 3</div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <h4>Month 3: Expansion</h4>
+                                <div class="milestone-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                    <span class="progress-text">+40% Growth</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="graph-bar" style="animation-delay: 0.4s;">
-                            <div class="graph-value">+60%</div>
-                            <div class="graph-label">Month 4</div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <h4>Month 4: Stability</h4>
+                                <div class="milestone-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                    <span class="progress-text">+60% Growth</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="graph-bar" style="animation-delay: 0.5s;">
-                            <div class="graph-value">+85%</div>
-                            <div class="graph-label">Month 5</div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <h4>Month 5: Acceleration</h4>
+                                <div class="milestone-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                    <span class="progress-text">+85% Growth</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="graph-bar" style="animation-delay: 0.6s;">
-                            <div class="graph-value">+120%</div>
-                            <div class="graph-label">Month 6</div>
+                        
+                        <div class="milestone">
+                            <div class="milestone-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <h4>Month 6: Success</h4>
+                                <div class="milestone-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <span class="progress-text">+120% Growth</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1464,13 +1549,13 @@
                         <img src="images/mohamed-abrar.jpg" alt="Mohamed Abrar" class="manager-photo">
                         <h3>Mohamed Abrar</h3>
                         <div class="manager-designation">Project Manager</div>
-                        <p>With over 15 years of experience in web development and project management, We ensure every project is delivered on time and exceeds client expectations.</p>
+                        <p>With over 8 years of experience in web development and project management, Mohamed ensures every project is delivered on time and exceeds client expectations.</p>
                     </div>
                     <div class="manager-card">
                         <img src="images/taj-ahmed.jpg" alt="Taj Ahmed" class="manager-photo">
                         <h3>Taj Ahmed</h3>
                         <div class="manager-designation">Project Manager</div>
-                        <p>Specializing in digital marketing strategies and client relations, We bring an era of expertise in delivering successful online solutions for businesses of all sizes.</p>
+                        <p>Specializing in digital marketing strategies and client relations, Taj brings 6 years of expertise in delivering successful online solutions for businesses of all sizes.</p>
                     </div>
                 </div>
             </div>
@@ -1636,20 +1721,30 @@
             });
         });
 
-        // Animate growth graph bars on scroll
+        // Animate progress bars on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            const graphBars = document.querySelectorAll('.graph-bar');
+            const progressBars = document.querySelectorAll('.progress-fill');
             
-            const observer = new IntersectionObserver((entries) => {
+            const progressObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
+                        const fill = entry.target;
+                        const width = fill.style.width;
+                        fill.style.width = '0';
+                        
+                        // Trigger reflow
+                        fill.offsetHeight;
+                        
+                        // Animate to the target width
+                        setTimeout(() => {
+                            fill.style.width = width;
+                        }, 300);
                     }
                 });
             }, { threshold: 0.5 });
             
-            graphBars.forEach(bar => {
-                observer.observe(bar);
+            progressBars.forEach(bar => {
+                progressObserver.observe(bar);
             });
         });
     </script>
