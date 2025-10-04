@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        /* Base Styles - Updated with your brand colors */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #f97316;
+            --primary: #8c52ff;
+            --primary-dark: #7a45e5;
+            --secondary: #ff914d;
             --dark: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
@@ -45,7 +45,7 @@
         .btn {
             display: inline-block;
             padding: 12px 28px;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
             border-radius: 4px;
             text-decoration: none;
@@ -57,25 +57,25 @@
         }
         
         .btn:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .btn-whatsapp {
-            background-color: #25D366;
+            background: #25D366;
         }
         
         .btn-whatsapp:hover {
-            background-color: #128C7E;
+            background: #128C7E;
         }
         
         .btn-secondary {
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
         }
         
         .btn-secondary:hover {
-            background-color: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .btn-outline {
@@ -85,7 +85,7 @@
         }
         
         .btn-outline:hover {
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
         }
         
@@ -111,7 +111,7 @@
             margin: 0 auto;
         }
         
-        /* Header Styles - Updated to match home page */
+        /* Header Styles - Updated with your brand gradient */
         header {
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -129,7 +129,7 @@
             padding: 20px 0;
         }
         
-        /* Logo Styles - Updated with rotating effect */
+        /* Logo Styles - Updated with your brand gradient */
         .logo {
             text-decoration: none;
             display: flex;
@@ -150,9 +150,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            /* Continuous rotation animation */
             animation: rotateLogo 10s linear infinite;
         }
         
@@ -217,7 +216,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transition: width 0.3s ease;
         }
         
@@ -232,7 +231,7 @@
             color: var(--dark);
         }
         
-        /* Pricing Intro Section */
+        /* Pricing Intro Section - Updated with brand gradient */
         .pricing-intro {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             padding: 150px 0 80px;
@@ -302,7 +301,7 @@
             position: absolute;
             top: 20px;
             right: -30px;
-            background: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
             padding: 5px 30px;
             font-size: 14px;
@@ -326,7 +325,9 @@
         .pricing-price {
             font-size: 48px;
             font-weight: 700;
-            color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
         }
         
@@ -369,9 +370,9 @@
             text-align: center;
         }
         
-        /* Custom Solution Section */
+        /* Custom Solution Section - Updated with brand gradient */
         .custom-solution {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
             text-align: center;
             padding: 80px 0;
@@ -417,7 +418,7 @@
             color: var(--gray);
         }
         
-        /* Footer */
+        /* Footer - Updated with brand colors */
         footer {
             background-color: var(--dark);
             color: white;
@@ -446,7 +447,7 @@
             bottom: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
         
         .footer-links {
@@ -486,7 +487,7 @@
         }
         
         .social-links a:hover {
-            background-color: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: translateY(-3px);
         }
         
@@ -610,7 +611,7 @@
     </section>
     
     <main id="pricing-page">
-        <!-- Pricing Section -->
+        <!-- Website Design Pricing Section -->
         <section class="pricing" id="pricing-packages">
             <div class="container">
                 <div class="section-title">
@@ -695,6 +696,96 @@
                         </div>
                         <div class="pricing-cta">
                             <a href="enquiry.html?package=premium" class="btn">Choose Premium</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Branding & Digital Marketing Pricing Section -->
+        <section class="pricing" id="branding-packages" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Branding & Digital Marketing Packages</h2>
+                    <p>Complete digital solutions to build your brand and drive business growth</p>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Digital Monetize Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <div class="pricing-name">Digital Monetize</div>
+                            <div class="pricing-price">AED 3,500</div>
+                            <div class="pricing-period">One-time payment</div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Social Media Strategy Development</li>
+                                <li><i class="fas fa-check"></i> Facebook & Instagram Campaigns</li>
+                                <li><i class="fas fa-check"></i> LinkedIn Business Promotion</li>
+                                <li><i class="fas fa-check"></i> Twitter Marketing Strategy</li>
+                                <li><i class="fas fa-check"></i> Content Calendar Creation</li>
+                                <li><i class="fas fa-check"></i> 30 Social Media Posts</li>
+                                <li><i class="fas fa-check"></i> Engagement & Community Management</li>
+                                <li><i class="fas fa-check"></i> Performance Analytics Report</li>
+                                <li><i class="fas fa-times"></i> <span style="opacity: 0.7;">Website Redesign</span></li>
+                                <li><i class="fas fa-times"></i> <span style="opacity: 0.7;">Complete Branding Package</span></li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="enquiry.html?package=digital-monetize" class="btn">Choose Digital Monetize</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Website Redesign Package -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <div class="pricing-name">Website Redesign Pro</div>
+                            <div class="pricing-price">AED 5,500</div>
+                            <div class="pricing-period">One-time payment</div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Complete Website Redesign</li>
+                                <li><i class="fas fa-check"></i> Custom UI/UX Design</li>
+                                <li><i class="fas fa-check"></i> Mobile-First Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Content Migration & Optimization</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO Implementation</li>
+                                <li><i class="fas fa-check"></i> Performance Optimization</li>
+                                <li><i class="fas fa-check"></i> Social Media Integration</li>
+                                <li><i class="fas fa-check"></i> 3 Months Technical Support</li>
+                                <li><i class="fas fa-check"></i> Basic Digital Marketing Setup</li>
+                                <li><i class="fas fa-times"></i> <span style="opacity: 0.7;">Complete All-in-One Package</span></li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="enquiry.html?package=website-redesign" class="btn btn-secondary">Choose Redesign Pro</a>
+                        </div>
+                    </div>
+                    
+                    <!-- All-in-One Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <div class="pricing-name">All-in-One Solution</div>
+                            <div class="pricing-price">AED 9,500</div>
+                            <div class="pricing-period">One-time payment</div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Professional Website Design</li>
+                                <li><i class="fas fa-check"></i> Domain Registration (1 Year)</li>
+                                <li><i class="fas fa-check"></i> Premium Hosting (1 Year)</li>
+                                <li><i class="fas fa-check"></i> Complete Digital Marketing</li>
+                                <li><i class="fas fa-check"></i> Social Media Management</li>
+                                <li><i class="fas fa-check"></i> Business Email Setup</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO Optimization</li>
+                                <li><i class="fas fa-check"></i> Brand Identity Development</li>
+                                <li><i class="fas fa-check"></i> Content Marketing Strategy</li>
+                                <li><i class="fas fa-check"></i> 6 Months Comprehensive Support</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="enquiry.html?package=all-in-one" class="btn">Choose All-in-One</a>
                         </div>
                     </div>
                 </div>
