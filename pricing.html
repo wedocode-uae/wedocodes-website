@@ -78,15 +78,16 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
+        /* Updated: Changed btn-outline to match btn-secondary */
         .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            color: white;
+            border: none;
         }
         
         .btn-outline:hover {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         section {
@@ -604,7 +605,7 @@
                 <p>Can't find what you're looking for? We specialize in custom solutions tailored to your specific requirements and budget.</p>
                 <div class="intro-actions">
                     <a href="#pricing-packages" class="btn btn-secondary">View Our Packages</a>
-                    <a href="enquiry.html" class="btn btn-outline">Request Custom Quote</a>
+                    <a href="enquiry.html" class="btn btn-secondary">Request Custom Quote</a>
                 </div>
             </div>
         </div>
