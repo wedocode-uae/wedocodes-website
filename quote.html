@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Get a Quote - WeDoCodes Custom Software & Cybersecurity Solutions">
+    <meta name="theme-color" content="#050b17">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Get a Quote | WeDoCodes - Request Your Custom Solution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #050b17; color: #ffffff; overflow-x: hidden; }
+        .glass-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 32px; transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(5, 11, 23, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; flex-wrap: wrap; }
+        .logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+        .logo-circle { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F58529, #E85F8B); box-shadow: 0 0 25px rgba(245, 133, 41, 0.5); animation: rotateLogo 10s linear infinite; }
+        @keyframes rotateLogo { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .code-symbol { color: white; font-weight: 800; font-size: 22px; font-family: 'Courier New', monospace; }
+        .logo-text { font-size: 26px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+        .logo-text span { background: linear-gradient(135deg, #F58529, #E85F8B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; list-style: none; gap: 32px; }
+        .nav-links a { text-decoration: none; color: rgba(255, 255, 255, 0.7); font-weight: 500; transition: 0.3s; font-size: 14px; }
+        .nav-links a:hover, .nav-links a.active { color: #F58529; }
+        .nav-btn { background: linear-gradient(135deg, #F58529, #E85F8B); padding: 10px 24px; border-radius: 40px; color: white !important; text-decoration: none; display: inline-block; }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(245, 133, 41, 0.3); }
+        .mobile-menu { display: none; font-size: 24px; cursor: pointer; }
+        .page-header { padding: 140px 0 60px; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(245, 133, 41, 0.1), transparent 60%); }
+        .page-header h1 { font-size: 52px; font-weight: 800; margin-bottom: 16px; }
+        .page-header p { color: rgba(255, 255, 255, 0.6); font-size: 18px; max-width: 700px; margin: 0 auto; }
+        .section { padding: 60px 0; }
+        .form-container { max-width: 800px; margin: 0 auto; padding: 40px; }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: rgba(255, 255, 255, 0.8); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 18px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; color: #ffffff; font-size: 16px; transition: 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #F58529; background: rgba(255, 255, 255, 0.08); }
+        .form-group select option { background: #0a0f1a; color: #ffffff; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .btn-submit { background: linear-gradient(135deg, #F58529, #E85F8B); padding: 16px 32px; border-radius: 40px; color: white; font-weight: 600; font-size: 16px; border: none; cursor: pointer; width: 100%; transition: 0.3s; }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(245, 133, 41, 0.3); }
+        .form-status { margin-top: 20px; padding: 12px; border-radius: 12px; text-align: center; display: none; }
+        .form-status.success { background: rgba(34, 197, 94, 0.2); border: 1px solid #22c55e; color: #22c55e; display: block; }
+        .form-status.error { background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #ef4444; display: block; }
+        footer { background: #030811; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .footer-col h4 { font-size: 18px; margin-bottom: 20px; }
+        .footer-col a { display: block; color: rgba(255, 255, 255, 0.5); text-decoration: none; margin-bottom: 12px; font-size: 14px; transition: 0.3s; }
+        .footer-col a:hover { color: #F58529; transform: translateX(5px); }
+        .footer-col p { color: rgba(255, 255, 255, 0.5); font-size: 14px; margin-bottom: 8px; }
+        .social-links { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .social-links a { width: 36px; height: 36px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .social-links a:hover { background: #F58529; transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); font-size: 13px; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; width: 100%; flex-direction: column; background: #050b17; padding: 20px; border-radius: 20px; margin-top: 16px; }
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; }
+            .form-row { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+            .form-container { padding: 24px; margin: 0 16px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .page-header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo"><div class="logo-circle"><span class="code-symbol">&lt;/&gt;</span></div><div class="logo-text">WeDo<span>Codes</span></div></a>
+            <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul>
+            <a href="quote.html" class="nav-btn">Get Quote</a>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="page-header"><div class="container"><h1>Request a Free Quote</h1><p>Tell us about your project. We'll respond within 24 hours with a customized solution.</p></div></section>
+    <section class="section"><div class="container"><div class="glass-card form-container"><form id="quoteForm"><div class="form-row"><div class="form-group"><label>Full Name *</label><input type="text" id="fullName" required></div><div class="form-group"><label>Email Address *</label><input type="email" id="email" required></div></div><div class="form-row"><div class="form-group"><label>Phone Number</label><input type="tel" id="phone"></div><div class="form-group"><label>Company Name</label><input type="text" id="company"></div></div><div class="form-group"><label>Service You Need *</label><select id="service" required><option value="">-- Select a service --</option><option>Software Development</option><option>Cybersecurity & Security Audit</option><option>Cloud Solutions</option><option>UI/UX & Mobile App Development</option><option>DevOps & CI/CD</option><option>Data Analytics & BI</option><option>Website Development</option><option>IT Consulting</option></select></div><div class="form-row"><div class="form-group"><label>Budget Range</label><select id="budget"><option value="">-- Select --</option><option>Under $5,000</option><option>$5,000 - $10,000</option><option>$10,000 - $25,000</option><option>$25,000 - $50,000</option><option>$50,000+</option></select></div><div class="form-group"><label>Timeline</label><select id="timeline"><option value="">-- Select --</option><option>ASAP (Within 2 weeks)</option><option>1-2 months</option><option>3-4 months</option><option>5-6 months</option><option>6+ months</option></select></div></div><div class="form-group"><label>Project Details *</label><textarea id="message" rows="5" placeholder="Please describe your project, goals, and requirements..." required></textarea></div><button type="submit" class="btn-submit">Submit Inquiry →</button><div id="formStatus" class="form-status"></div></form></div></div></section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><div class="logo" style="margin-bottom: 20px; justify-content: center;"><div class="logo-circle" style="width: 40px; height: 40px;"><span class="code-symbol" style="font-size: 18px;">&lt;/&gt;</span></div><div class="logo-text" style="font-size: 22px;">WeDo<span>Codes</span></div></div><p style="color: rgba(255,255,255,0.5); font-size: 14px;">Premium software solutions and cyber security support for modern businesses.</p><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="quote.html">Get Quote</a></div>
+            <div class="footer-col"><h4>Our Services</h4><a href="services.html">Software Development</a><a href="services.html">Cybersecurity</a><a href="services.html">Cloud Solutions</a><a href="services.html">Mobile Apps</a><a href="services.html">IT Consulting</a></div>
+            <div class="footer-col"><h4>Contact Info</h4><p><i class="fas fa-phone" style="margin-right: 10px; color: #F58529;"></i> TEL: 04 220 0212</p><p><i class="fab fa-whatsapp" style="margin-right: 10px; color: #25D366;"></i> +971 50 123 5798</p><p><i class="fas fa-envelope" style="margin-right: 10px; color: #F58529;"></i> info@wedocodes.com</p><p style="margin-top: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Dubai, UAE</p><p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Abu Dhabi, UAE</p><p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Al Ain, UAE</p></div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 WeDoCodes. All rights reserved. | Software Solutions & Cyber Security</p></div>
+    </div>
+</footer>
+<script>
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('keydown', function(e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } });
+    console.log('%c🔒 This website is protected by advanced security measures.', 'color: #F58529; font-size: 14px; font-weight: bold;');
+    document.querySelector('.mobile-menu').addEventListener('click', function() { document.querySelector('.nav-links').classList.toggle('active'); });
+    document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('fullName').value, email = document.getElementById('email').value, phone = document.getElementById('phone').value, company = document.getElementById('company').value;
+        const service = document.getElementById('service').value, budget = document.getElementById('budget').value, timeline = document.getElementById('timeline').value, message = document.getElementById('message').value;
+        const statusDiv = document.getElementById('formStatus');
+        if (!fullName || !email || !service || !message) { statusDiv.className = 'form-status error'; statusDiv.textContent = '❌ Please fill all required fields.'; return; }
+        statusDiv.className = 'form-status'; statusDiv.textContent = '📧 Sending...'; statusDiv.style.display = 'block';
+        const formData = new FormData();
+        formData.append('name', fullName); formData.append('email', email); formData.append('phone', phone); formData.append('company', company);
+        formData.append('service', service); formData.append('budget', budget); formData.append('timeline', timeline); formData.append('message', message);
+        formData.append('_subject', `Quote Request: ${service} from ${fullName}`); formData.append('_to', 'taj@wedocodes.com'); formData.append('_replyto', email);
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/taj@wedocodes.com', { method: 'POST', body: formData });
+            if (response.ok) { statusDiv.className = 'form-status success'; statusDiv.textContent = '✅ Thank you! We will contact you within 24 hours.'; document.getElementById('quoteForm').reset(); }
+            else throw new Error();
+        } catch (error) {
+            window.location.href = `mailto:taj@wedocodes.com?subject=Quote Request: ${service}&body=Name: ${fullName}%0AEmail: ${email}%0APhone: ${phone}%0ACompany: ${company}%0AService: ${service}%0ABudget: ${budget}%0ATimeline: ${timeline}%0AMessage: ${message}`;
+            statusDiv.className = 'form-status success'; statusDiv.textContent = '✅ Email client opened. Please send to complete.';
+        }
+    });
+</script>
+</body>
+</html>
