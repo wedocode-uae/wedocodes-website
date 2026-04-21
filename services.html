@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Our Services - WeDoCodes Software Development & Cybersecurity Solutions">
+    <meta name="theme-color" content="#050b17">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>Our Services | WeDoCodes - Software & Cybersecurity Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #050b17; color: #ffffff; overflow-x: hidden; }
+        .glass-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 32px; transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
+        .glass-card:hover { border-color: rgba(245, 133, 41, 0.5); transform: translateY(-8px); box-shadow: 0 30px 50px -15px rgba(245, 133, 41, 0.3); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(5, 11, 23, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; flex-wrap: wrap; }
+        .logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+        .logo-circle { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F58529, #E85F8B); box-shadow: 0 0 25px rgba(245, 133, 41, 0.5); animation: rotateLogo 10s linear infinite; }
+        @keyframes rotateLogo { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .code-symbol { color: white; font-weight: 800; font-size: 22px; font-family: 'Courier New', monospace; }
+        .logo-text { font-size: 26px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+        .logo-text span { background: linear-gradient(135deg, #F58529, #E85F8B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; list-style: none; gap: 32px; }
+        .nav-links a { text-decoration: none; color: rgba(255, 255, 255, 0.7); font-weight: 500; transition: 0.3s; font-size: 14px; }
+        .nav-links a:hover, .nav-links a.active { color: #F58529; }
+        .nav-btn { background: linear-gradient(135deg, #F58529, #E85F8B); padding: 10px 24px; border-radius: 40px; color: white !important; text-decoration: none; display: inline-block; }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(245, 133, 41, 0.3); }
+        .mobile-menu { display: none; font-size: 24px; cursor: pointer; }
+        .page-header { padding: 140px 0 60px; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(245, 133, 41, 0.1), transparent 60%); }
+        .page-header h1 { font-size: 52px; font-weight: 800; margin-bottom: 16px; }
+        .page-header p { color: rgba(255, 255, 255, 0.6); font-size: 18px; max-width: 700px; margin: 0 auto; }
+        .section { padding: 60px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-detail-card { padding: 32px; }
+        .service-icon-lg { width: 64px; height: 64px; background: rgba(245, 133, 41, 0.15); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .service-icon-lg i { font-size: 32px; color: #F58529; }
+        .service-detail-card h3 { font-size: 24px; margin-bottom: 16px; }
+        .service-detail-card p { color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin-bottom: 20px; }
+        .feature-list { list-style: none; }
+        .feature-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, 0.7); font-size: 14px; }
+        .feature-list li i { color: #F58529; font-size: 14px; }
+        footer { background: #030811; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .footer-col h4 { font-size: 18px; margin-bottom: 20px; }
+        .footer-col a { display: block; color: rgba(255, 255, 255, 0.5); text-decoration: none; margin-bottom: 12px; font-size: 14px; transition: 0.3s; }
+        .footer-col a:hover { color: #F58529; transform: translateX(5px); }
+        .footer-col p { color: rgba(255, 255, 255, 0.5); font-size: 14px; margin-bottom: 8px; }
+        .social-links { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .social-links a { width: 36px; height: 36px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .social-links a:hover { background: #F58529; transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); font-size: 13px; }
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; width: 100%; flex-direction: column; background: #050b17; padding: 20px; border-radius: 20px; margin-top: 16px; }
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; }
+            .services-grid, .footer-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 32px; }
+            .service-detail-card { text-align: center; }
+            .service-icon-lg { margin: 0 auto 24px; }
+            .feature-list li { justify-content: center; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .page-header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo"><div class="logo-circle"><span class="code-symbol">&lt;/&gt;</span></div><div class="logo-text">WeDo<span>Codes</span></div></a>
+            <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul>
+            <a href="quote.html" class="nav-btn">Get Quote</a>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="page-header"><div class="container"><h1>Our Services</h1><p>End-to-end technology solutions tailored to your business needs</p></div></section>
+    <section class="section"><div class="container"><div class="services-grid">
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-code"></i></div><h3>Custom Software Development</h3><p>Tailored software solutions designed to meet your unique business requirements with scalability, reliability and strong user experience.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Enterprise Software</li><li><i class="fas fa-check-circle"></i> CRM & ERP Systems</li><li><i class="fas fa-check-circle"></i> Business Automation</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-globe"></i></div><h3>Web Development</h3><p>Modern, responsive websites and web applications built for performance, conversion, engagement and long-term maintainability.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Corporate Websites</li><li><i class="fas fa-check-circle"></i> E-commerce Platforms</li><li><i class="fas fa-check-circle"></i> Web Applications</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-mobile-alt"></i></div><h3>Mobile App Development</h3><p>Native and cross-platform mobile applications for iOS and Android, designed for usability, speed and business growth.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> iOS & Android Apps</li><li><i class="fas fa-check-circle"></i> Cross-Platform (Flutter)</li><li><i class="fas fa-check-circle"></i> App Maintenance</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-shield-alt"></i></div><h3>Cybersecurity Solutions</h3><p>Advanced cyber protection, risk reduction, hardening and business-focused security services for evolving digital environments.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Security Audits</li><li><i class="fas fa-check-circle"></i> Compliance (SOC2, ISO)</li><li><i class="fas fa-check-circle"></i> 24/7 Monitoring</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-cloud"></i></div><h3>Cloud Solutions</h3><p>Cloud deployments, hosting strategy, observability, modernization and operational optimization for stable environments.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> AWS/Azure/GCP</li><li><i class="fas fa-check-circle"></i> Cloud Migration</li><li><i class="fas fa-check-circle"></i> Kubernetes & Docker</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-chart-line"></i></div><h3>Data Analytics & BI</h3><p>Custom dashboards, ETL pipelines, and predictive models that drive business decisions with real-time insights.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Business Intelligence</li><li><i class="fas fa-check-circle"></i> Data Warehousing</li><li><i class="fas fa-check-circle"></i> Predictive Analytics</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-infinity"></i></div><h3>DevOps & CI/CD</h3><p>Automated pipelines, infrastructure as code, and zero-downtime deployments for faster, more reliable releases.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> CI/CD Pipeline Setup</li><li><i class="fas fa-check-circle"></i> Infrastructure as Code</li><li><i class="fas fa-check-circle"></i> Monitoring & Observability</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-headset"></i></div><h3>IT Consulting & Support</h3><p>Strategic guidance to help your business leverage technology for competitive advantage and operational excellence.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> Technology Assessment</li><li><i class="fas fa-check-circle"></i> Digital Transformation</li><li><i class="fas fa-check-circle"></i> 24/7 Technical Support</li></ul></div>
+        <div class="glass-card service-detail-card"><div class="service-icon-lg"><i class="fas fa-robot"></i></div><h3>AI & Automation</h3><p>Intelligent assistants, smart workflows, AI-powered search and modern automation features for business software.</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i> AI Integrations</li><li><i class="fas fa-check-circle"></i> Process Automation</li><li><i class="fas fa-check-circle"></i> Smart Workflows</li></ul></div>
+    </div></div></section>
+    <section class="section"><div class="container"><div class="glass-card" style="padding: 50px; text-align: center; background: linear-gradient(135deg, rgba(245, 133, 41, 0.15), rgba(232, 95, 139, 0.15));"><h2 style="margin-bottom: 20px;">Not sure which service you need?</h2><p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Contact us for a free consultation. We'll help you identify the right solution for your business.</p><a href="quote.html" class="nav-btn" style="display: inline-block;">Request Free Consultation →</a></div></div></section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><div class="logo" style="margin-bottom: 20px; justify-content: center;"><div class="logo-circle" style="width: 40px; height: 40px;"><span class="code-symbol" style="font-size: 18px;">&lt;/&gt;</span></div><div class="logo-text" style="font-size: 22px;">WeDo<span>Codes</span></div></div><p style="color: rgba(255,255,255,0.5); font-size: 14px;">Premium software solutions and cyber security support for modern businesses.</p><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="quote.html">Get Quote</a></div>
+            <div class="footer-col"><h4>Our Services</h4><a href="services.html">Software Development</a><a href="services.html">Cybersecurity</a><a href="services.html">Cloud Solutions</a><a href="services.html">Mobile Apps</a><a href="services.html">IT Consulting</a></div>
+            <div class="footer-col"><h4>Contact Info</h4><p><i class="fas fa-phone" style="margin-right: 10px; color: #F58529;"></i> TEL: 04 220 0212</p><p><i class="fab fa-whatsapp" style="margin-right: 10px; color: #25D366;"></i> +971 50 123 5798</p><p><i class="fas fa-envelope" style="margin-right: 10px; color: #F58529;"></i> info@wedocodes.com</p><p style="margin-top: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Dubai, UAE</p><p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Abu Dhabi, UAE</p><p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Al Ain, UAE</p></div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 WeDoCodes. All rights reserved. | Software Solutions & Cyber Security</p></div>
+    </div>
+</footer>
+<script>
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('keydown', function(e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } });
+    console.log('%c🔒 This website is protected by advanced security measures.', 'color: #F58529; font-size: 14px; font-weight: bold;');
+    document.querySelector('.mobile-menu').addEventListener('click', function() { document.querySelector('.nav-links').classList.toggle('active'); });
+</script>
+</body>
+</html>
