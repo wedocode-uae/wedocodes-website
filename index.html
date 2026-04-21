@@ -2,1850 +2,251 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeDoCodes - Professional Web Services in UAE</title>
-    
-    <!-- Favicon with your purple to orange gradient -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:%238c52ff;stop-opacity:1' /><stop offset='100%' style='stop-color:%23ff914d;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23grad)'/><text x='50' y='62' font-family='monospace' font-size='28' text-anchor='middle' fill='white'>&lt;/&gt;</text></svg>" type="image/svg+xml">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="WeDoCodes - Professional web services in UAE. Website design, domain purchase, hosting, business email, and digital marketing solutions.">
-    <meta name="keywords" content="web design UAE, domain purchase, web hosting, business email, digital marketing, website development">
-    <meta name="author" content="WeDoCodes">
-    
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="WeDoCodes - Professional Web Services in UAE">
-    <meta property="og:description" content="Professional web services in UAE. Website design, domain purchase, hosting, business email, and digital marketing solutions.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.wedocodes.com">
-    
-    <!-- Existing CSS and font links -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="WeDoCodes - Premium Software Development & Cybersecurity Solutions in UAE">
+    <meta name="theme-color" content="#050b17">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>WeDoCodes | Software Development & Cybersecurity</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #f97316;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --border: #e2e8f0;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #050b17; color: #ffffff; overflow-x: hidden; }
+        .glass-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 32px; transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
+        .glass-card:hover { border-color: rgba(245, 133, 41, 0.5); transform: translateY(-8px); box-shadow: 0 30px 50px -15px rgba(245, 133, 41, 0.3); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(5, 11, 23, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; flex-wrap: wrap; }
+        .logo { text-decoration: none; display: flex; align-items: center; gap: 12px; }
+        .logo-circle { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #F58529, #E85F8B); box-shadow: 0 0 25px rgba(245, 133, 41, 0.5); animation: rotateLogo 10s linear infinite; }
+        @keyframes rotateLogo { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .code-symbol { color: white; font-weight: 800; font-size: 22px; font-family: 'Courier New', monospace; }
+        .logo-text { font-size: 26px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+        .logo-text span { background: linear-gradient(135deg, #F58529, #E85F8B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-links { display: flex; list-style: none; gap: 32px; }
+        .nav-links a { text-decoration: none; color: rgba(255, 255, 255, 0.7); font-weight: 500; transition: 0.3s; font-size: 14px; }
+        .nav-links a:hover, .nav-links a.active { color: #F58529; }
+        .nav-btn { background: linear-gradient(135deg, #F58529, #E85F8B); padding: 10px 24px; border-radius: 40px; color: white !important; text-decoration: none; display: inline-block; }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(245, 133, 41, 0.3); }
+        .mobile-menu { display: none; font-size: 24px; cursor: pointer; }
+        .hero { padding: 140px 0 80px; background: radial-gradient(ellipse at 30% 40%, rgba(245, 133, 41, 0.1), transparent 60%); }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-badge { display: inline-block; background: rgba(245, 133, 41, 0.15); color: #F58529; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 600; margin-bottom: 24px; }
+        .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+        .hero h1 span { background: linear-gradient(135deg, #F58529, #E85F8B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero p { font-size: 18px; color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin-bottom: 32px; max-width: 500px; }
+        .btn-primary { background: linear-gradient(135deg, #F58529, #E85F8B); padding: 14px 32px; border-radius: 40px; color: white; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(245, 133, 41, 0.3); }
+        .btn-outline { background: transparent; padding: 14px 32px; border-radius: 40px; color: white; text-decoration: none; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2); display: inline-block; transition: 0.3s; margin-left: 16px; }
+        .btn-outline:hover { border-color: #F58529; background: rgba(245, 133, 41, 0.1); }
+        .hero-stats { display: flex; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
+        .hero-stat h3 { font-size: 28px; font-weight: 700; color: #F58529; }
+        .hero-stat p { font-size: 14px; color: rgba(255, 255, 255, 0.5); margin: 0; }
+        .hero-visual { position: relative; min-height: 520px; }
+        .vector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; position: relative; z-index: 2; }
+        .vector-item { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 20px; text-align: center; transition: 0.3s; }
+        .vector-item:hover { border-color: rgba(245, 133, 41, 0.4); transform: translateY(-5px); }
+        .vector-item i { font-size: 32px; color: #F58529; margin-bottom: 12px; display: block; }
+        .vector-item span { font-size: 13px; color: rgba(255, 255, 255, 0.8); font-weight: 500; }
+        .center-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 160px; height: 160px; background: radial-gradient(circle, rgba(245, 133, 41, 0.25), transparent 70%); border-radius: 50%; z-index: 1; }
+        .partner-strip { padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); margin-top: 40px; }
+        .partner-logos { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .partner-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .partner-logo { width: 60px; height: 60px; background: rgba(255, 255, 255, 0.05); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: 0.3s; }
+        .partner-item:hover .partner-logo { background: rgba(245, 133, 41, 0.2); transform: translateY(-3px); }
+        .partner-name { font-size: 12px; color: rgba(255, 255, 255, 0.5); font-weight: 600; }
+        .fortinet-text { font-size: 14px; font-weight: 800; letter-spacing: 1px; color: #ffffff; }
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header .badge { display: inline-block; background: rgba(245, 133, 41, 0.15); color: #F58529; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 600; margin-bottom: 16px; }
+        .section-header h2 { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
+        .section-header p { color: rgba(255, 255, 255, 0.6); font-size: 18px; }
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .service-card { padding: 32px; }
+        .service-icon { width: 56px; height: 56px; background: rgba(245, 133, 41, 0.15); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .service-icon i { font-size: 28px; color: #F58529; }
+        .service-card h3 { font-size: 22px; margin-bottom: 12px; }
+        .service-card p { color: rgba(255, 255, 255, 0.6); line-height: 1.6; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .why-feature { padding: 24px; border-radius: 24px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); transition: 0.3s; }
+        .why-feature:hover { border-color: rgba(245, 133, 41, 0.3); transform: translateY(-3px); }
+        .why-feature i { font-size: 32px; color: #F58529; margin-bottom: 16px; display: block; }
+        .why-feature h4 { font-size: 18px; margin-bottom: 8px; }
+        .why-feature p { color: rgba(255, 255, 255, 0.5); font-size: 14px; }
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .process-step { text-align: center; padding: 32px; }
+        .step-number { width: 56px; height: 56px; background: linear-gradient(135deg, #F58529, #E85F8B); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 800; font-size: 22px; }
+        .process-step h3 { font-size: 20px; margin-bottom: 12px; }
+        .process-step p { color: rgba(255, 255, 255, 0.6); font-size: 14px; }
+        .cta-section { background: linear-gradient(135deg, rgba(245, 133, 41, 0.15), rgba(232, 95, 139, 0.15)); border-radius: 40px; padding: 60px; text-align: center; border: 1px solid rgba(245, 133, 41, 0.25); }
+        .cta-section h2 { font-size: 32px; margin-bottom: 16px; }
+        .cta-section p { color: rgba(255, 255, 255, 0.6); margin-bottom: 32px; }
+        footer { background: #030811; padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .footer-col h4 { font-size: 18px; margin-bottom: 20px; }
+        .footer-col a { display: block; color: rgba(255, 255, 255, 0.5); text-decoration: none; margin-bottom: 12px; font-size: 14px; transition: 0.3s; }
+        .footer-col a:hover { color: #F58529; transform: translateX(5px); }
+        .footer-col p { color: rgba(255, 255, 255, 0.5); font-size: 14px; margin-bottom: 8px; }
+        .social-links { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .social-links a { width: 36px; height: 36px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .social-links a:hover { background: #F58529; transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 40px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); font-size: 13px; }
+        @media (max-width: 1024px) {
+            .services-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 44px; }
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            color: var(--dark);
-            line-height: 1.6;
-            background-color: var(--light);
-            overflow-x: hidden;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-whatsapp {
-            background-color: #25D366;
-        }
-        
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #ea580c;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Header Styles - Always White */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        /* Logo Styles - Fixed underline issue */
-        .logo {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        
-        .logo-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #8c52ff, #ff914d);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            /* Continuous rotation animation */
-            animation: rotateLogo 10s linear infinite;
-        }
-        
-        @keyframes rotateLogo {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        .code-symbol {
-            color: white;
-            font-weight: 700;
-            font-size: 18px;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .logo-text span {
-            color: #ff914d;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: color 0.3s ease;
-            position: relative;
-            font-family: 'Source Sans Pro', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 14px;
-        }
-        
-        .nav-links a:hover {
-            color: #ff914d;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #ff914d;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--dark);
-        }
-        
-        /* Hero Section with Flipped Wave Shape */
-        .hero {
-            background: linear-gradient(90deg, #8c52ff, #ff914d);
-            color: white;
-            padding: 180px 0 0;
-            margin-top: 0;
-            position: relative;
-            overflow: hidden;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23f8fafc'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
-            transform: scaleY(-1);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .hero-text {
-            text-align: left;
-        }
-        
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            font-family: 'Source Sans Pro', sans-serif;
-            font-weight: 700;
-        }
-        
-        .hero h1 .company-name {
-            color: white;
-            display: block;
-            font-size: 60px;
-        }
-        
-        .hero h1 .tagline {
-            font-size: 42px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .hero .description {
-            font-size: 20px;
-            margin: 30px 0;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.6;
-        }
-        
-        .hero .sub-description {
-            font-size: 24px;
-            margin: 30px 0;
-            color: white;
-            font-weight: 600;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        /* Glass Icons Container */
-        .glass-icons-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        /* Create the invisible table top effect */
-        .glass-icons-container::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px 10px 0 0;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-        
-        .glass-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(255, 105, 180, 0.2) 0%, 
-                rgba(255, 165, 0, 0.2) 20%, 
-                rgba(50, 205, 50, 0.2) 40%, 
-                rgba(30, 144, 255, 0.2) 60%, 
-                rgba(138, 43, 226, 0.2) 80%, 
-                rgba(255, 69, 0, 0.2) 100%);
-            z-index: -1;
-            opacity: 0.7;
-        }
-        
-        .glass-icon:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-        
-        .glass-icon i {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .glass-icon span {
-            font-size: 12px;
-            font-weight: 600;
-            color: white;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Digital Marketing Strategy Section */
-        .marketing-strategy {
-            background-color: white;
-            padding-top: 100px;
-        }
-        
-        .strategy-intro {
-            text-align: center;
-            margin-bottom: 60px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .strategy-intro h2 {
-            font-size: 36px;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-        
-        .strategy-intro p {
-            font-size: 18px;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-        
-        .strategy-graph {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-        
-        .strategy-steps {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            position: relative;
-            margin-bottom: 40px;
-        }
-        
-        .strategy-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            width: 10%;
-        }
-        
-        .step-circle {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8c52ff, #ff914d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .step-circle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 30px;
-            height: 30px;
-            background: #ff914d;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        
-        .step-circle i {
-            font-size: 24px;
-            color: white;
-        }
-        
-        .step-title {
-            font-weight: 600;
-            text-align: center;
-            font-size: 14px;
-            color: var(--dark);
-        }
-        
-        /* Fixed arrow positioning */
-        .step-arrow-container {
-            position: absolute;
-            top: 35px;
-            right: -45px;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 3;
-        }
-        
-        .step-arrow {
-            font-size: 24px;
-            color: #8c52ff;
-        }
-        
-        /* Strategy Video Section - UPDATED */
-        .strategy-video {
-            margin: 60px 0;
-            text-align: center;
-        }
-        
-        .video-container {
-            max-width: 100%;
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        }
-        
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .video-caption {
-            margin-top: 20px;
-            font-style: italic;
-            color: var(--gray);
-        }
-        
-        .strategy-summary {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .summary-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid #8c52ff;
-        }
-        
-        .summary-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-        
-        .summary-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .summary-card p {
-            color: var(--gray);
-            line-height: 1.7;
-        }
-        
-        /* Growth Milestones Section (Replaced Graph) */
-        .growth-milestones {
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 60px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .milestones-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .milestones-title h3 {
-            font-size: 28px;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-        
-        .milestones-title p {
-            color: var(--gray);
-            font-size: 18px;
-        }
-        
-        .milestones-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .milestone {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .milestone:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .milestone::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: linear-gradient(to bottom, #8c52ff, #ff914d);
-        }
-        
-        .milestone-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #8c52ff, #ff914d);
-            color: white;
-            font-size: 24px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .milestone-content {
-            flex: 1;
-        }
-        
-        .milestone-content h4 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .milestone-progress {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .progress-bar {
-            flex: 1;
-            height: 10px;
-            background-color: #e2e8f0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #8c52ff, #ff914d);
-            border-radius: 5px;
-            transition: width 1s ease-in-out;
-            width: 0;
-        }
-        
-        .progress-text {
-            font-weight: 600;
-            color: #8c52ff;
-            min-width: 100px;
-            text-align: right;
-        }
-        
-        /* Services Section */
-        .services {
-            background-color: white;
-            padding-top: 100px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            text-align: center;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-icon {
-            font-size: 40px;
-            color: #8c52ff;
-            margin-bottom: 20px;
-        }
-        
-        .service-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .service-card p {
-            color: var(--gray);
-        }
-        
-        /* Project Managers Section */
-        .project-managers {
-            background-color: #f1f5f9;
-            padding: 80px 0;
-            margin-top: 80px;
-        }
-        
-        .managers-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .manager-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .manager-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Fixed: Removed the round outline from manager photos */
-        .manager-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .manager-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-            color: var(--dark);
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .manager-designation {
-            font-size: 16px;
-            color: #ff914d;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .manager-email {
-            font-size: 15px;
-            color: var(--gray);
-            margin-bottom: 15px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .manager-email i {
-            background: linear-gradient(90deg, #8c52ff, #ff914d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 14px;
-        }
-        
-        .manager-card p {
-            color: var(--gray);
-            line-height: 1.7;
-            font-size: 15px;
-        }
-        
-        /* Why Choose Us Section */
-        .why-choose {
-            background-color: #f1f5f9;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #8c52ff, #ff914d);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 32px;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, #8c52ff, #ff914d);
-        }
-        
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .feature-card p {
-            color: var(--gray);
-            line-height: 1.7;
-        }
-        
-        /* Our Clients Section */
-        .our-clients {
-            background-color: white;
-            padding: 80px 0;
-        }
-        
-        .clients-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-        
-        .client-logo {
-            background-color: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 100%;
-        }
-        
-        .client-logo:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .client-logo img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        .clients-cta {
-            text-align: center;
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 40px;
-        }
-        
-        .clients-cta h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .clients-cta p {
-            color: var(--gray);
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Process Section */
-        .process {
-            background-color: white;
-        }
-        
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            counter-reset: process-counter;
-        }
-        
-        .process-step {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            counter-increment: process-counter;
-        }
-        
-        .process-step::before {
-            content: counter(process-counter);
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #8c52ff, #ff914d);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .process-icon {
-            font-size: 40px;
-            color: #8c52ff;
-            margin: 20px 0 15px;
-        }
-        
-        .process-step h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .process-step p {
-            color: var(--gray);
-            font-size: 15px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: #8c52ff;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: #8c52ff;
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .strategy-steps {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 30px;
-            }
-            
-            .strategy-step {
-                width: 30%;
-                margin-bottom: 40px;
-            }
-            
-            .step-arrow-container {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .services-grid, .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .glass-icons-container {
-                margin-top: 40px;
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .strategy-summary {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .strategy-step {
-                width: 45%;
-            }
-            
-            .managers-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .nav-links a {
-                color: var(--dark);
-                font-size: 18px;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero h1 .company-name {
-                font-size: 40px;
-            }
-            
-            .hero h1 .tagline {
-                font-size: 32px;
-            }
-            
-            .hero .sub-description {
-                font-size: 20px;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 30px;
-            }
-            
-            .services-grid, .features-grid, .process-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .glass-icons-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .strategy-summary {
-                grid-template-columns: 1fr;
-            }
-            
-            .strategy-step {
-                width: 100%;
-            }
-            
-            /* Mobile styles for milestones */
-            .milestone {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            
-            .milestone-progress {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .progress-text {
-                text-align: center;
-            }
-            
-            .manager-photo {
-                width: 120px;
-                height: 120px;
-            }
-            
-            /* Mobile styles for clients section */
-            .client-logo {
-                padding: 20px;
-            }
-            
-            .clients-cta {
-                padding: 30px 20px;
-            }
-            
-            .clients-cta h3 {
-                font-size: 24px;
-            }
+            .nav-links { display: none; width: 100%; flex-direction: column; background: #050b17; padding: 20px; border-radius: 20px; margin-top: 16px; }
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 36px; }
+            .hero p { margin: 0 auto 32px; }
+            .hero-stats { justify-content: center; }
+            .services-grid, .process-grid, .why-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 28px; }
+            .cta-section { padding: 40px 24px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .vector-grid { grid-template-columns: repeat(2, 1fr); }
+            .partner-logos { justify-content: center; }
+            .btn-outline { margin-left: 0; margin-top: 16px; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .hero h1 { font-size: 28px; }
+            .vector-item { padding: 12px; }
+            .vector-item i { font-size: 24px; }
+            .partner-logo { width: 50px; height: 50px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="main-header">
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-circle"><span class="code-symbol">&lt;/&gt;</span></div>
+                <div class="logo-text">WeDo<span>Codes</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="quote.html" class="nav-btn">Get Quote</a>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="hero">
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <div class="logo-container">
-                        <div class="logo-circle">
-                            <span class="code-symbol">&lt;/&gt;</span>
-                        </div>
-                        <span class="logo-text">WeDo<span>Codes</span></span>
+            <div class="hero-grid">
+                <div>
+                    <span class="hero-badge">SOFTWARE DEVELOPMENT & CYBERSECURITY SOLUTIONS</span>
+                    <h1>We Build. We Secure.<br><span>We Empower.</span></h1>
+                    <p>WeDoCodes delivers innovative software development, cybersecurity, and IT solutions that help businesses scale securely in the digital era.</p>
+                    <div>
+                        <a href="services.html" class="btn-primary">Our Services →</a>
+                        <a href="quote.html" class="btn-outline">Get a Free Consultation →</a>
                     </div>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="designs.html">Our Designs</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="enquiry.html">Get Quote</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Home Page Content -->
-    <main id="home-page">
-        <!-- Hero Section with Flipped Wave Shape -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>
-                            <span class="company-name">Wedocode,</span>
-                            <span class="tagline">It's a Code, Creativity, Clarity.</span>
-                        </h1>
-                        <p class="description">We turn your ideas in to exceptional digital experiences that promise your growth.</p>
-                        <p class="sub-description">Get your website within same day</p>
-                        <a href="https://wa.me/00971501235798" class="btn btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Chat with us now
-                        </a>
-                    </div>
-                    <div class="glass-icons-container">
-                        <div class="glass-icon">
-                            <i class="fas fa-search"></i>
-                            <span>SEO</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-server"></i>
-                            <span>Host</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-globe"></i>
-                            <span>Domain</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Ecommerce</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Projects</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-bullhorn"></i>
-                            <span>Marketing</span>
-                        </div>
-                        <div class="glass-icon">
-                            <i class="fas fa-chess-knight"></i>
-                            <span>Strategy</span>
-                        </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat"><h3>150+</h3><p>Projects Delivered</p></div>
+                        <div class="hero-stat"><h3>98%</h3><p>Client Retention</p></div>
+                        <div class="hero-stat"><h3>24/7</h3><p>Support</p></div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Digital Marketing Strategy Section -->
-        <section class="marketing-strategy">
-            <div class="container">
-                <div class="strategy-intro">
-                    <h2>Our Exceptional Digital Marketing Strategy</h2>
-                    <p>We have developed a comprehensive 9-step digital marketing strategy that delivers measurable results for your business. Our proven approach ensures maximum visibility, engagement, and conversions across all digital channels.</p>
-                </div>
-                
-                <div class="strategy-graph">
-                    <div class="strategy-steps">
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">1</div>
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="step-title">Research & Analysis</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">2</div>
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <div class="step-title">Goal Setting</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">3</div>
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="step-title">Audience Definition</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">4</div>
-                                <i class="fas fa-pencil-alt"></i>
-                            </div>
-                            <div class="step-title">Content Strategy</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">5</div>
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="step-title">Channel Selection</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">6</div>
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="step-title">Implementation</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">7</div>
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <div class="step-title">Performance Tracking</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">8</div>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <div class="step-title">Optimization</div>
-                            <div class="step-arrow-container">
-                                <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                        <div class="strategy-step">
-                            <div class="step-circle">
-                                <div class="step-number">9</div>
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="step-title">Results & Growth</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Strategy Video Section - UPDATED -->
-                    <div class="strategy-video">
-                        <div class="video-container">
-                            <video autoplay muted loop playsinline>
-                                <source src="video/9-step-digital-marketing-strategy.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <p class="video-caption">Our 9-step digital marketing strategy in action</p>
-                    </div>
-                    
-                    <div class="strategy-summary">
-                        <div class="summary-card">
-                            <h3>Research & Analysis</h3>
-                            <p>We conduct in-depth market research and competitor analysis to understand your industry landscape and identify opportunities for growth.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Goal Setting</h3>
-                            <p>We establish clear, measurable objectives aligned with your business goals, whether it's brand awareness, lead generation, or sales.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Audience Definition</h3>
-                            <p>We identify and segment your target audience to create personalized marketing messages that resonate with each group.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Content Strategy</h3>
-                            <p>We develop a comprehensive content plan that addresses your audience's needs and positions your brand as an industry authority.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Channel Selection</h3>
-                            <p>We choose the most effective digital channels (SEO, PPC, social media, email) based on where your audience spends their time.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Implementation</h3>
-                            <p>We execute the strategy with precision, creating and distributing content across selected channels according to a detailed timeline.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Performance Tracking</h3>
-                            <p>We monitor campaign performance using advanced analytics tools to measure ROI and track progress toward your goals.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Optimization</h3>
-                            <p>We continuously refine and improve campaigns based on performance data to maximize results and adapt to market changes.</p>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Results & Growth</h3>
-                            <p>We deliver measurable business growth through increased visibility, engagement, and conversions that drive your bottom line.</p>
-                        </div>
+                <div class="hero-visual">
+                    <div class="center-glow"></div>
+                    <div class="vector-grid">
+                        <div class="vector-item"><i class="fas fa-code"></i><span>Software Dev</span></div>
+                        <div class="vector-item"><i class="fas fa-shield-alt"></i><span>Cybersecurity</span></div>
+                        <div class="vector-item"><i class="fas fa-cloud"></i><span>Cloud Solutions</span></div>
+                        <div class="vector-item"><i class="fas fa-mobile-alt"></i><span>Mobile Apps</span></div>
+                        <div class="vector-item"><i class="fas fa-lock"></i><span>Data Protection</span></div>
+                        <div class="vector-item"><i class="fas fa-chart-line"></i><span>Analytics</span></div>
+                        <div class="vector-item"><i class="fas fa-infinity"></i><span>DevOps</span></div>
+                        <div class="vector-item"><i class="fas fa-database"></i><span>Database</span></div>
+                        <div class="vector-item"><i class="fas fa-robot"></i><span>AI Integration</span></div>
                     </div>
                 </div>
-                
-                <!-- Growth Milestones (Replaced Graph) -->
-                <div class="growth-milestones">
-                    <div class="milestones-title">
-                        <h3>Our Growth Journey Together</h3>
-                        <p>Track your business growth month by month with our proven strategy</p>
-                    </div>
-                    
-                    <div class="milestones-container">
-                        <div class="milestone">
-                            <div class="milestone-icon">
-                                <i class="fas fa-seedling"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Month 1: Foundation</h4>
-                                <div class="milestone-progress">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 15%"></div>
-                                    </div>
-                                    <span class="progress-text">+15% Growth</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="milestone">
-                            <div class="milestone-icon">
-                                <i class="fas fa-sprout"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Month 2: Growth</h4>
-                                <div class="milestone-progress">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 25%"></div>
-                                    </div>
-                                    <span class="progress-text">+25% Growth</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="milestone">
-                            <div class="milestone-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Month 3: Expansion</h4>
-                                <div class="milestone-progress">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 40%"></div>
-                                    </div>
-                                    <span class="progress-text">+40% Growth</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="milestone">
-                            <div class="milestone-icon">
-                                <i class="fas fa-tree"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Month 4: Stability</h4>
-                                <div class="milestone-progress">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 60%"></div>
-                                    </div>
-                                    <span class="progress-text">+60% Growth</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="milestone">
-                            <div class="milestone-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Month 5: Acceleration</h4>
-                                <div class="milestone-progress">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 85%"></div>
-                                    </div>
-                                    <span class="progress-text">+85% Growth</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="milestone">
-                            <div class="milestone-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Month 6: Success</h4>
-                                <div class="milestone-progress">
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-text">+120% Growth</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Services</h2>
-                    <p>We offer comprehensive web solutions to help your business establish a strong online presence.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Website Design</h3>
-                        <p>Custom website designs that are visually appealing, responsive, and optimized for user experience.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Domain Purchase</h3>
-                        <p>Find and register the perfect domain name for your business with our expert guidance.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Web Hosting</h3>
-                        <p>Reliable and secure hosting solutions to keep your website running smoothly 24/7.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Business Email</h3>
-                        <p>Professional email addresses using your domain name to build trust with your customers.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3>E-commerce Solutions</h3>
-                        <p>Complete online store setup with payment integration, inventory management, and marketing tools.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Website Maintenance</h3>
-                        <p>Regular updates, security patches, and performance optimization for your website.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Logo Design</h3>
-                        <p>Professional logo design that represents your brand identity and makes a lasting impression.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>Digital Marketing</h3>
-                        <p>Comprehensive digital marketing strategies including SEO, social media, and PPC advertising.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>SEO Optimization</h3>
-                        <p>Improve your website visibility on search engines and attract more organic traffic.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="why-choose">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Why Choose WeDoCodes?</h2>
-                    <p>We provide exceptional value and expertise that sets us apart from other web service providers.</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Fast & Efficient</h3>
-                        <p>We deliver projects on time without compromising quality, ensuring your business gets online quickly.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Secure & Reliable</h3>
-                        <p>Our solutions include robust security measures and reliable hosting to protect your online presence.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Dedicated Support</h3>
-                        <p>We provide ongoing support and maintenance to ensure your website remains up-to-date and secure.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile-First Approach</h3>
-                        <p>All our websites are designed with a mobile-first approach to ensure optimal performance on all devices.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Results-Driven</h3>
-                        <p>Our designs are focused on achieving your business goals, whether it's leads, sales, or brand awareness.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3>Custom Solutions</h3>
-                        <p>We tailor our services to meet your specific business needs, ensuring a perfect fit for your requirements.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Clients Section -->
-        <section class="our-clients">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Valued Clients</h2>
-                    <p>We're proud to work with businesses of all sizes across various industries</p>
-                </div>
-                <div class="clients-grid">
-                    <div class="client-logo">
-                        <img src="images/clients-logo.jpg" alt="Our Clients">
-                    </div>
-                </div>
-                <div class="clients-cta">
-                    <h3>Join Our Growing List of Satisfied Clients</h3>
-                    <p>Let us help transform your online presence and drive your business growth</p>
-                    <a href="enquiry.html" class="btn btn-secondary">Become Our Client</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Process Section -->
-        <section class="process">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Simple Process</h2>
-                    <p>We make getting your business online straightforward and stress-free.</p>
-                </div>
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="process-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3>Consultation</h3>
-                        <p>We discuss your requirements, goals, and vision for your online presence.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-icon">
-                            <i class="fas fa-pencil-ruler"></i>
-                        </div>
-                        <h3>Design & Planning</h3>
-                        <p>We create a customized design plan that aligns with your brand and objectives.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Development</h3>
-                        <p>Our team builds your website with attention to detail and best practices.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Launch & Support</h3>
-                        <p>We launch your website and provide ongoing support to ensure its success.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>WeDoCodes</h3>
-                    <p>Professional web services provider in UAE, specializing in website design, domain registration, hosting, and business email solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="designs.html">Our Designs</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="enquiry.html">Get Quote</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Website Design</a></li>
-                        <li><a href="#">Domain Purchase</a></li>
-                        <li><a href="#">Web Hosting</a></li>
-                        <li><a href="#">Business Email</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Logo Design</a></li>
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">Website Maintenance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> support@wedocodes.com</li>
-                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +971 50 123 5798</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Office 207, Abu Saif Building, Dubai</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 WeDoCodes. All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-            });
-        });
-
-        // Animate progress bars on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const progressBars = document.querySelectorAll('.progress-fill');
-            
-            const progressObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const fill = entry.target;
-                        const width = fill.style.width;
-                        fill.style.width = '0';
-                        
-                        // Trigger reflow
-                        fill.offsetHeight;
-                        
-                        // Animate to the target width
-                        setTimeout(() => {
-                            fill.style.width = width;
-                        }, 300);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            progressBars.forEach(bar => {
-                progressObserver.observe(bar);
-            });
-        });
-    </script>
+    </section>
+    <div class="partner-strip">
+        <div class="container">
+            <div class="partner-logos">
+                <div class="partner-item"><div class="partner-logo"><i class="fab fa-aws"></i></div><span class="partner-name">AWS</span></div>
+                <div class="partner-item"><div class="partner-logo"><i class="fab fa-microsoft"></i></div><span class="partner-name">Microsoft</span></div>
+                <div class="partner-item"><div class="partner-logo"><i class="fab fa-google"></i></div><span class="partner-name">Google Cloud</span></div>
+                <div class="partner-item"><div class="partner-logo"><i class="fab fa-docker"></i></div><span class="partner-name">Docker</span></div>
+                <div class="partner-item"><div class="partner-logo"><i class="fas fa-cubes"></i></div><span class="partner-name">Kubernetes</span></div>
+                <div class="partner-item"><div class="partner-logo"><span class="fortinet-text">FORTINET</span></div><span class="partner-name">FORTINET</span></div>
+                <div class="partner-item"><div class="partner-logo"><i class="fas fa-chart-simple"></i></div><span class="partner-name">VMware</span></div>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><span class="badge">WHAT WE DO</span><h2>Comprehensive IT Solutions</h2><p>From software development to cybersecurity, we provide end-to-end IT solutions that drive your business forward.</p></div>
+            <div class="services-grid">
+                <div class="glass-card service-card"><div class="service-icon"><i class="fas fa-code"></i></div><h3>Custom Software Development</h3><p>Tailored software solutions designed to meet your unique business requirements.</p></div>
+                <div class="glass-card service-card"><div class="service-icon"><i class="fas fa-globe"></i></div><h3>Web Development</h3><p>Modern, responsive websites that deliver exceptional user experiences.</p></div>
+                <div class="glass-card service-card"><div class="service-icon"><i class="fas fa-mobile-alt"></i></div><h3>Mobile App Development</h3><p>Native and cross-platform mobile applications for iOS and Android.</p></div>
+                <div class="glass-card service-card"><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h3>Cybersecurity Solutions</h3><p>Advanced security measures to protect your business from evolving threats.</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background: linear-gradient(180deg, transparent, rgba(245, 133, 41, 0.04), transparent);">
+        <div class="container">
+            <div class="section-header"><span class="badge">WHY CHOOSE US</span><h2>Built Like a Real Technology Partner</h2><p>We help businesses create real digital infrastructure through premium websites, custom software, and cyber-aware systems.</p></div>
+            <div class="why-grid">
+                <div><div class="why-features"><div class="why-feature"><i class="fas fa-bullseye"></i><h4>Business-Driven Solutions</h4><p>Every project shaped around real operational needs.</p></div><div class="why-feature"><i class="fas fa-medal"></i><h4>Premium Execution</h4><p>Polished presentation with strong usability.</p></div><div class="why-feature"><i class="fas fa-shield-alt"></i><h4>Security Mindset</h4><p>Beyond visuals to ensure secure foundations.</p></div><div class="why-feature"><i class="fas fa-life-ring"></i><h4>Long-Term Support</h4><p>Updates, optimization, and continuous help.</p></div></div></div>
+                <div class="glass-card" style="padding: 36px;"><h3 style="margin-bottom: 24px;">What Makes Us Different</h3><div style="margin-bottom: 20px; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #F58529;"></i> Premium brand presentation with strong visual hierarchy</div><div style="margin-bottom: 20px; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #F58529;"></i> Software-backed business thinking for real outcomes</div><div style="margin-bottom: 20px; display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #F58529;"></i> Cyber security alignment at every layer</div><div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-check-circle" style="color: #F58529;"></i> Support after launch with continuous optimization</div></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-header"><span class="badge">OUR PROCESS</span><h2>How We Deliver Digital Value</h2><p>Every project follows a structured flow designed to reduce risk, improve clarity, and create better outcomes.</p></div>
+            <div class="process-grid">
+                <div class="glass-card process-step"><div class="step-number">1</div><h3>Discover</h3><p>Study business goals, pain points, and digital opportunities.</p></div>
+                <div class="glass-card process-step"><div class="step-number">2</div><h3>Design</h3><p>Craft interface systems and solution architecture.</p></div>
+                <div class="glass-card process-step"><div class="step-number">3</div><h3>Develop</h3><p>Build secure and scalable solutions with structured delivery.</p></div>
+                <div class="glass-card process-step"><div class="step-number">4</div><h3>Secure</h3><p>Apply cyber-aware implementation patterns.</p></div>
+                <div class="glass-card process-step"><div class="step-number">5</div><h3>Deploy</h3><p>Launch with stability, testing, and refinement.</p></div>
+                <div class="glass-card process-step"><div class="step-number">6</div><h3>Support</h3><p>Continue with monitoring, assistance, and enhancements.</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="cta-section"><h2>Ready to Build Something Great?</h2><p>Let's discuss your project. No obligation, just a conversation about how we can help you succeed.</p><a href="quote.html" class="btn-primary">Request a Free Quote →</a></div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><div class="logo" style="margin-bottom: 20px; justify-content: center;"><div class="logo-circle" style="width: 40px; height: 40px;"><span class="code-symbol" style="font-size: 18px;">&lt;/&gt;</span></div><div class="logo-text" style="font-size: 22px;">WeDo<span>Codes</span></div></div><p style="color: rgba(255,255,255,0.5); font-size: 14px;">Premium software solutions and cyber security support for modern businesses.</p><div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="quote.html">Get Quote</a></div>
+            <div class="footer-col"><h4>Our Services</h4><a href="services.html">Software Development</a><a href="services.html">Cybersecurity</a><a href="services.html">Cloud Solutions</a><a href="services.html">Mobile Apps</a><a href="services.html">IT Consulting</a></div>
+            <div class="footer-col"><h4>Contact Info</h4><p><i class="fas fa-phone" style="margin-right: 10px; color: #F58529;"></i> TEL: 04 220 0212</p><p><i class="fab fa-whatsapp" style="margin-right: 10px; color: #25D366;"></i> +971 50 123 5798</p><p><i class="fas fa-envelope" style="margin-right: 10px; color: #F58529;"></i> info@wedocodes.com</p><p style="margin-top: 12px;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Dubai, UAE</p><p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Abu Dhabi, UAE</p><p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #F58529;"></i> Al Ain, UAE</p></div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 WeDoCodes. All rights reserved. | Software Solutions & Cyber Security</p></div>
+    </div>
+</footer>
+<script>
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('keydown', function(e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } });
+    console.log('%c🔒 This website is protected by advanced security measures.', 'color: #F58529; font-size: 14px; font-weight: bold;');
+    document.querySelector('.mobile-menu').addEventListener('click', function() { document.querySelector('.nav-links').classList.toggle('active'); });
+</script>
 </body>
 </html>
